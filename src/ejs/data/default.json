@@ -1,0 +1,13 @@
+{
+  "title": "title",
+  "description": "description",
+  "keywords": "keywords",
+  "url": {
+    "pc": "url-pc",
+    "sp": "url-sp"
+  },
+  "og": {
+    "image": "//dummyimage.com/1200x630/000/fff.png"
+  },
+  "apple_touch_icon": "//dummyimage.com/152x251/000/fff.png&text=icon"
+}

@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/*
+ * setting - 変数宣言、mixinなど
+ */
+@import "setting/var/color";
+@import "setting/var/font";
+@import "setting/var/sprite-common";
+@import "setting/mixin/sprite";
+
+/*
+ * base - リセット・デフォルトスタイル定義
+ */
+@import "base/reset";
+@import "base/default";
+
+/*
+ * block - BEMのBlock
+ */
+@import "block/arrowLink";
+@import "block/button";
+@import "block/card";
+@import "block/header";
+@import "block/headline";
+@import "block/ic";
+@import "block/list";
+@import "block/media";
+@import "block/panel";
+@import "block/searchFooter";
+@import "block/searchLink";
+@import "block/section";
+@import "block/simpleButton";
+@import "block/slider";
+@import "block/tile";
+@import "block/title";
+@import "block/footer";
+
+/*
+ * utility - helperなど
+ */
+@import "utility/flex";
+@import "utility/is";
+@import "utility/mg";
+@import "utility/pd";
+@import "utility/shadow";
+@import "utility/txt";

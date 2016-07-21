@@ -1,0 +1,59 @@
+/*
+---
+name: tile
+category: block/tile
+---
+
+```html
+<!-- tile -->
+<div class="tile">
+
+  <!-- tile__item -->
+  <a href="#" class="tile__item js-lazy" data-original="//dummyimage.com/320x180/eee/fff.png&text=dummy">
+    <section>
+      <h3 class="tile__title">1</h3>
+    </section>
+  </a>
+  <!-- /tile__item -->
+
+  <!-- tile__item -->
+  <a href="#" class="tile__item js-lazy" data-original="//dummyimage.com/320x180/eee/fff.png&text=dummy">
+    <section>
+      <h3 class="tile__title">2</h3>
+    </section>
+  </a>
+  <!-- /tile__item -->
+
+</div>
+<!-- /tile -->
+```
+*/
+
+@charset "utf-8";
+
+.tile {
+  display: flex;
+  background-color: #0097A7;
+  + .tile {
+    border-top: solid 1px #B2EBF2;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 50%;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    &:first-child {
+      border-right: solid 1px #eee;
+    }
+  }
+  &__title {
+    font-size: 17px;
+    color: #fff;
+    font-weight: bold;
+  }
+}

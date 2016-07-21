@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.pd-8 {padding: 8px}
+.pd-16 {padding: 16px}
+
+.pd-8t{padding-top: 8px}
+.pd-16t{padding-top: 16px}
+
+.pd-8b{padding-bottom: 8px}
+.pd-16b{padding-bottom: 16px}
+.pd-28b {padding-bottom: 28px}
+
+.pd-8r{padding-right: 8px}
+.pd-16r{padding-right: 16px}
+
+.pd-8l{padding-left: 8px}
+.pd-16l{padding-left: 16px}

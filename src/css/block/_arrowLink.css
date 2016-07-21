@@ -1,0 +1,47 @@
+/*
+---
+name: arrowLink
+category: block/arrowLink
+---
+
+```html
+<!-- arrowLink -->
+<a href="#" class="arrowLink">
+  <p class="arrowLink__headline">headline</p>
+</a>
+<!-- /arrowLink -->
+```
+*/
+
+@charset "utf-8";
+
+.arrowLink {
+  display: flex;
+  align-items: center;
+  height: 76px;
+  padding: 0 36px 0 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  + .arrowLink {
+    border-top: solid 1px #eee;
+  }
+  &::after {
+    display: block;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-top: solid 2px #959595;
+    border-right: solid 2px #959595;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 16px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &__headline {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

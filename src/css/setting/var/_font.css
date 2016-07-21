@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+/* font-family */
+$font-family-default: Meiryo, "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Osaka, Arial, Sans-serif;
+
+/* font-size */
+$font-size-base: 14px;

@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/* font */
+.txt-bold {
+  font-weight: bold;
+}
+
+.txt-base {
+  font-size: $font-size-base;
+}
+
+
+/* color */
+.txt-link {
+  color: $color-link;
+}
+
+.txt-default {
+  color: $color-default;
+}
+
+
+/* text-align */
+.txt-right {
+  text-align: right;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+/* 文字省略 */
+.txt-ellipsis { /* 1行 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

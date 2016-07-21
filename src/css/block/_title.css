@@ -1,0 +1,34 @@
+/*
+---
+name: title
+category: block/title
+---
+
+```html
+<!-- title -->
+<h1 class="title">
+  <span class="title__main">main</span>
+  <spn class="title__sub">sub</span>
+</h1>
+<!-- /title -->
+```
+*/
+
+@charset "utf-8";
+
+.title {
+  padding: 16px 16px 13px;
+  background-color: #fff;
+  &__main {
+    font-size: 22px;
+    font-weight: bold;
+    color: #313131;
+    display: block;
+  }
+  &__sub {
+    font-size: 11px;
+    color: #212121;
+    margin-top: 1px;
+    display: block;
+  }
+}

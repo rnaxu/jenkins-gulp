@@ -1,0 +1,159 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+
+  "env": {
+    "browser": true,// ブラウザのグローバル変数を有効にする
+    "node": true,// node.jsのグローバル変数とnode.js特有のルールを有効にする
+    "amd": true,// AMDの仕様に沿ってrequire()とdefine()を有効にする
+    "jquery": true,// jQueryのグローバル変数を有効にする
+    "mocha": true,// mochaのグローバル変数を有効にする
+    "jasmine": true// jasmine(ver1.3/ver2.0)のグローバル変数を有効にする
+  },
+
+  "globals": {
+    "_": true,// _を定義済みのグローバル変数とする
+    "jQuery": true,// jQueryを定義済みのグローバル変数とする
+    "$": true,// $を定義済みのグローバル変数とする
+    "ko": true,// koを定義済みのグローバル変数とする
+    "Vue": true// Vueを定義済みのグローバル変数とする
+  },
+
+  "rules": {
+
+    // Possible Errors
+    "comma-dangle": [2, "never"],// 不要なカンマを許可しない
+    "no-cond-assign": [2, "always"],// 条件式での代入を許可しない
+    "no-console": [1],// consoleの使用を許可しない
+    "no-constant-condition": [2],// 不変の値による条件式を許可しない
+    "no-control-regex": [2],// 正規表現での制御文字の使用を許可しない
+    "no-debugger": [2],// debuggerの使用を許可しない
+    "no-dupe-args": [2],// 引数の重複を許可しない
+    "no-dupe-keys": [2],// オブジェクトリテラルでのキーの重複を許可しない
+    "no-duplicate-case": [2],// caseのラベルの重複を許可しない
+    "no-empty": [2],// 空のブロックを許可しない
+    "no-ex-assign": [2],// 引数の例外オブジェクトの上書きを許可しない
+    "no-extra-boolean-cast": [2],// 不要な真偽値への型変換を許可しない
+    "no-extra-parens": [1, "all"],// 不要な括弧を許可しない
+    "no-extra-semi": [2],// 不要なセミコロンを許可しない
+    "no-func-assign": [2],// 関数の上書きを許可しない
+    "no-inner-declarations": [2],// 入れ子のブロック内で変数宣言、関数宣言を許可しない
+    "no-invalid-regexp": [2],// RegExpコンストラクタに無効な引数を渡すことを許可しない
+    "no-irregular-whitespace": [2],// 不規則なスペースを許可しない
+    "no-negated-in-lhs": [2],// in演算子での左オペランドの否定を許可しない
+    "no-obj-calls": [2],// グローバルオブジェクトを関数として呼び出すことを許可しない
+    "no-regex-spaces": [2],// 正規表現リテラルで連続したスペースを許可しない
+    "quote-props": [2, "as-needed"],// 必要に応じてプロパティをクォーテーションで囲うことを強制する
+    "no-sparse-arrays": [2],// スカスカの配列を許可しない
+    "no-unreachable": [2],// 到達することのないコードを許可しない
+    "use-isnan": [2],// NaNを用いた比較を許可しない
+    "valid-jsdoc": [1],// 無効な、不完全なJSDocコメントを許可しない
+    "valid-typeof": [2],// 有効な文字列以外とtypeofの比較を許可しない
+
+    // Best Practices
+    "block-scoped-var": [2],// 宣言しているコンテキストの外で変数を使用することを許可しない
+    "complexity": [1, 3],// 循環的複雑度とその閾値
+    "curly": [2],// 波括弧の省略を許可しない
+    "default-case": [2],// switch文でのdefaultの省略を許可しない
+    "dot-notation": [1],// プロパティへのアクセスにブラケット記法を許可しない
+    "eqeqeq": [2],// 等価演算子を許可しない
+    "guard-for-in": [1],// prototypeチェーンで継承したプロパティをフィルタリングしないfor-inを許可しない
+    "no-caller": [2],// argument.caller、argument.calleeの使用を許可しない
+    "no-div-regex": [2],// 除算のように見える正規表現を許可しない
+    "no-else-return": [2],// 不要なelse節でのreturnを許可しない
+    "no-eq-null": [2],// 等価演算子でのnull比較を許可しない
+    "no-eval": [2],// evalの使用を許可しない
+    "no-extend-native": [2],// ネイティブオブジェクトの拡張を許可しない
+    "no-extra-bind": [2],// 不要なbindの使用を許可しない
+    "no-fallthrough": [2],// switch文でのcaseでフォールスルーを許可しない
+    "no-floating-decimal": [2],// 浮動小数点のドット前後の数値の省略を許可しない
+    "no-implied-eval": [2],// 暗黙のevalを許可しない
+    "no-iterator": [2],// __iterator__の使用を許可しない
+    "no-labels": [2, {"allowLoop": true, "allowSwitch": true}],// 繰り返し処理やswitch文以外に対してのラベルの使用を許可しない
+    "no-lone-blocks": [2],// 不要な入れ子のブロックを許可しない
+    "no-loop-func": [2],// ループの中での関数定義を許可しない
+    "no-multi-spaces": [2],// 複数の連続したスペースを許可しない
+    "no-multi-str": [2],// 複数行の文字列を許可しない
+    "no-native-reassign": [2],// ネイティブオブジェクトへの再代入を許可しない
+    "no-new-func": [2],// Functionコンストラクタの使用を許可しない
+    "no-new-wrappers": [2],// プリミティブ型のラッパーオブジェクトの使用を許可しない
+    "no-new": [2],// 変数に代入せずにnew演算子を使用することを許可しない
+    "no-octal-escape": [2],// 8進数のエスケープシーケンスの使用を許可しない
+    "no-octal": [2],// 8進数リテラルの使用を許可しない
+    "no-param-reassign": [2],// 関数の引数への再代入を許可しない
+    "no-process-env": [2],// process.envの使用を許可しない
+    "no-proto": [2],// __proto__の使用を許可しない
+    "no-redeclare": [2],// 同じ変数の繰り返しの宣言を許可しない
+    "no-return-assign": [2],// return文での代入を許可しない
+    "no-script-url": [2],// javascript:urlの使用を許可しない
+    "no-self-compare": [2],// 自分自身との比較を許可しない
+    "no-sequences": [2],// カンマ演算子の使用を許可しない
+    "no-throw-literal": [2],// リテラル値で例外を投げることを許可しない
+    "no-unused-expressions": [2],// 使われることのない式を許可しない
+    "no-warning-comments": [2],// TODOやFIXMEなどの開発中ととれるコメントを許可しない
+    "no-with": [2],// withの使用を許可しない
+    "radix": [2],// parseIntの引数の基数を省略することを許可しない
+    "yoda": [2],// 条件の値が左辺にくる条件式（ヨーダ）を許可しない
+
+    // Strict Mode
+    "strict": [1, "global"],// strictモードのモード指定
+
+    // Variables
+    "no-catch-shadow": [2],// catch句の引数を上位スコープで変数宣言することを許可しない
+    "no-delete-var": [2],// 変数に対してのdeleteを許可しない
+    "no-label-var": [2],// 変数名をラベルに使用することを許可しない
+    "no-shadow-restricted-names": [2],// グローバルオブジェクトのプロパティに対するシャドーイングを許可しない
+    "no-shadow": [2],// シャドーイングを許可しない
+    "no-undef-init": [2],// undefinedによる初期化を許可しない
+    "no-undef": [2],// 宣言されていない変数の使用を許可しない
+    "no-unused-vars": [2],// 使用されることのない変数を許可しない
+    "no-use-before-define": [2],// 定義する前に変数、関数を使用することを許可しない
+
+    // Node.js
+    "handle-callback-err": [1],// コールバックパターンでのエラーハンドリングの省略を許可しない
+    "no-mixed-requires": [1],// require()の変数と他の変数を一緒にまとめて宣言することを許可しない
+    "no-new-require": [1],// require()したものを直接new演算子で使わない
+    "no-path-concat": [1],// __dirname、__filenameを使うときに文字列連結を許可しない
+    "no-process-exit": [1],// process.exit()の使用を許可しない
+
+    // Stylistic Issues
+    "brace-style": [2, "1tbs"],// 波括弧の前後の改行スタイルを統一する
+    "camelcase": [2],// キャメルケース以外での命名を許可しない
+    "comma-spacing": [2, {
+      "before": false,
+      "after": true
+    }],// カンマの前のスペースを許可せず、カンマのあとにスペースがないことを許可しない
+    "comma-style": [1, "last"],// 改行後のカンマを許可しない
+    "indent": [1, 2],// インデントは2スペース以外を許可しない
+    "key-spacing": [2, {
+      "beforeColon": false,
+      "afterColon": true
+    }],// プロパティのコロンの前のスペースを許可せず、コロンの後にスペースがないのを許可しない
+    "max-nested-callbacks": [2, 3],// コールバック関数のネスト階層をn段階以上許可しない
+    "new-cap": [2],// newコンストラクタの名前を先頭大文字以外許可しない
+    "new-parens": [2],// 括弧なしでのnewコンストラクタの呼び出しを許可しない
+    "no-array-constructor": [2],// 複数の引数を持ったArrayコンストラクタを許可しない
+    "no-lonely-if": [1],// else ifに置き換え可能なelseブロックの中でのifを許可しない
+    "no-mixed-spaces-and-tabs": [2, "smart-tabs"],// スペースとタブの混合を許可しない
+    "no-multiple-empty-lines": [2, {"max": 2}],// (max値以上の)連続した空白行を許可しない
+    "no-nested-ternary": [1],// 入れ子の三項演算子を許可しない
+    "no-new-object": [2],// Objectコンストラクタを許可しない
+    "no-spaced-func": [2],// 関数を実行するときの括弧の前にスペースを入れることを許可しない
+    "no-trailing-spaces": [2],// 不要なスペースを許可しない
+    "quotes": [2, "single", "avoid-escape"],// シングルクォーテーション以外のクォーテーションを許可しない
+    "semi-spacing": [2, {
+      "before": false,
+      "after": true
+    }],// セミコロンの直前のスペースを許可せず、セミコロンの直後にスペースを入れないことを許可しない
+    "semi": [2],// セミコロンの省略を許可しない
+    "space-before-blocks": [2, "always"],// ブロックの括弧の前にスペースを入れないことを許可しない
+    "space-in-parens": [2, "never"],// 括弧の中の最初と最後にスペースを入れることを許可しない
+    "space-infix-ops": [2],// 二項演算子の前後にスペースを入れないことを許可しない
+    "keyword-spacing": [2]// ifやforなどのキーワードの直前と直後にスペースを入れないことを許可しない
+  }
+}

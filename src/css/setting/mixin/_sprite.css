@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@define-mixin sprite $name {
+  background-image: url($(name)-image);
+  background-size: calc($(name)-total-width / 2) calc($(name)-total-height / 2);
+  background-position: calc($(name)-offset-x / 2) calc($(name)-offset-y / 2);
+  width: calc($(name)-width / 2);
+  height: calc($(name)-height / 2);
+}

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.mg-8 {margin: 8px}
+.mg-16 {margin: 16px}
+.mg-32 {margin: 32px}
+
+.mg-8t {margin-top: 8px}
+.mg-16t {margin-top: 16px}
+.mg-32t {margin-top: 32px}
+
+.mg-8b {margin-bottom: 8px}
+.mg-16b {margin-bottom: 16px}
+.mg-32b {margin-bottom: 32px}
+
+.mg-8r {margin-right: 8px}
+.mg-16r {margin-right: 16px}
+.mg-32r {margin-right: 32px}
+
+.mg-8l {margin-left: 8px}
+.mg-16l {margin-left: 16px}
+.mg-32l {margin-left: 32px}
+
+.mg-40tb {margin-top: 40px; margin-bottom: 40px;}
