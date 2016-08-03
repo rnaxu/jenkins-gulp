@@ -98,14 +98,12 @@
 
 # ルートディレクトリ構成
 
-    bin/ ： ビルド・デプロイシェル
     dist/ ： 出力ディレクトリ
     src/ ： 開発ディレクトリ
     tmp/ ： 中間生成物一時保管ディレクトリ
     .editorconfig
     .gitignore
     gulpfile.js
-    Makefile ： ビルド・デプロイシェル
     package.json
     README.md
     stats.csv ： stylestatsファイル
