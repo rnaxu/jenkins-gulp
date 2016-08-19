@@ -5,6 +5,7 @@ SYMBOLIC_LINK=/home/node_package/gulp-boiler/node_modules
 LOCAL_PATH=${WORKSPACE}/dist/
 SRC_PATH=${WORKSPACE}/src/
 DEPLOY_BRANCH_NAME=delivery
+DATE=`date +%Y%m%d%H%M%S`
 
 # build
 if test -d $SRC_PATH ; then
@@ -42,6 +43,6 @@ if [ -z "$(git status --porcelain)" ]; then
   echo -e "\n*** commitすべき差分が存在しません ***\n\n"
 else
   git add -A
-  git commit -m "build dist for delivery"
+  git commit -m "delivery branch - ${DATE}"
   git push origin $DEPLOY_BRANCH_NAME
 fi
