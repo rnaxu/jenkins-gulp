@@ -10,7 +10,7 @@ DEPLOY_BRANCH_NAME=delivery
 COMMIT_ID="$(git rev-parse HEAD)"
 COMMIT_MSG="$(git log -1 --pretty=%B --oneline)"
 
-PATTERN="#([0-9]+)"
+PATTERN="issue-([0-9]+)"
 
 echo $COMMIT_MSG
 
