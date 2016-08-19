@@ -26,7 +26,7 @@ if test -d $SRC_PATH ; then
 
   # build
   echo -e "\n\n*** build ***"
-  gulp
+  gulp build
   echo -e "*** build done ***\n\n"
 else
   # error
