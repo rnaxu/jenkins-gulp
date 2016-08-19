@@ -1,56 +1,46 @@
 #!/bin/bash
 
+
 # 変数
 SYMBOLIC_LINK=/home/node_package/gulp-boiler/node_modules
 LOCAL_PATH=${WORKSPACE}/dist/
 SRC_PATH=${WORKSPACE}/src/
-DEPLOY_BRANCH_NAME=delivery
+BRANCH_PATH=delivery
 
-# commit message
-COMMIT_ID="$(git rev-parse HEAD)"
-COMMIT_MSG="$(git log -1 --pretty=%B --oneline)"
 
-echo $COMMIT_MSG
+# 指定領域のnode_modulesにシンボリックリンクを張る
+if test -d node_modules ; then
+  echo "node_module is exist."
+else
+  ln -s $SYMBOLIC_LINK
+fi
+
 
 # build
 if test -d $SRC_PATH ; then
-  # 指定領域のnode_modulesにシンボリックリンクを張る
-  if test -d node_modules ; then
-    echo -e "\n\n*** node_module is exist ***"
-  else
-    ln -s $SYMBOLIC_LINK
-  fi
-
-  source ~/.nvm/nvm.sh
-  nvm use v4.2
-
-  # build
-  echo -e "\n\n*** build ***"
-  gulp
-  echo -e "*** build done ***\n\n"
+  echo -e "\n\n*** content build ***"
+  gulp
+  echo -e "*** content build done ***\n\n"
 else
-  # error
-  echo -e "\n\n*** build 対象が存在しません ***\n\n"
-  break
+  echo -e "\n\n*** content buildが実行できませんでした ***\n\n"
+  exit
 fi
 
+
+# .gitとdist以外削除
+ls -A | grep -v ".git" | grep -v "dist" | xargs rm -rf | rm -rf .gitignore
+
+
 # checkout
-git checkout $DEPLOY_BRANCH_NAME
-git pull --rebase origin
+git checkout $BRANCH_PATH
+git branch
 
-# WSから dist/ と .git/ 以外を削除
-# if test -d ${WORKSPACE} ; then
-ls -A | grep -v "dist" | grep -v ".git" | xargs rm -rf | rm -rf .gitignore | rm -rf bin
-# fi
 
-# distディレクトリをroot展開
+# distの中身を展開
 cp -r dist/* .
 rm -rf dist
 
-if [ -z "$(git status --porcelain)" ]; then
-  echo -e "\n*** commitすべき差分が存在しません ***\n\n"
-else
-  git add -A
-  git commit -m "delivery branch : $COMMIT_ID"
-  git push origin $DEPLOY_BRANCH_NAME
-fi
+# git push
+git add -A
+git commit -m "build dist for delivery"
+git push origin $BRANCH_PATH
