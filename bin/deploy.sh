@@ -26,7 +26,7 @@ if test -d $SRC_PATH ; then
 
   # build
   echo -e "\n\n*** build ***"
-  gulp build
+  gulp
   echo -e "*** build done ***\n\n"
 else
   # error
@@ -39,9 +39,9 @@ git checkout $DEPLOY_BRANCH_NAME
 git pull --rebase origin
 
 # WSから dist/ と .git/ 以外を削除
-if test -d ${WORKSPACE} ; then
+# if test -d ${WORKSPACE} ; then
 ls -A | grep -v "dist" | grep -v ".git" | xargs rm -rf | rm -rf .gitignore | rm -rf bin
-fi
+# fi
 
 # distディレクトリをroot展開
 cp -r dist/* .
