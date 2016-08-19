@@ -10,7 +10,21 @@ DEPLOY_BRANCH_NAME=delivery
 COMMIT_ID="$(git rev-parse HEAD)"
 COMMIT_MSG="$(git log -1 --pretty=%B --oneline)"
 
+PATTERN="#([0-9]+)"
+
 echo $COMMIT_MSG
+
+# issueとcommitを紐づけるため、commitメッセージにissue番号が含まれているか確認
+# if [[ "$COMMIT_MSG" =~ $PATTERN ]]; then
+#   echo "$COMMIT_MSG"
+#   NUM="$(echo $COMMIT_MSG | cut -d"'" -f2 | cut -d"'" -f1 | cut -d"-" -f2)"
+#   echo "$NUM NUM"
+# else
+#   echo "$COMMIT_MSG is invalid!"
+#   exit 1
+# fi
+#
+# ISSUE_NUM="#$NUM"
 
 # build
 if test -d $SRC_PATH ; then
@@ -48,6 +62,6 @@ if [ -z "$(git status --porcelain)" ]; then
   echo -e "\n*** commitすべき差分が存在しません ***\n\n"
 else
   git add -A
-  git commit -m "build from : $COMMIT_ID"
+  git commit -m "build from : $COMMIT_MSG"
   git push origin $DEPLOY_BRANCH_NAME
 fi
