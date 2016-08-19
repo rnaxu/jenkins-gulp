@@ -18,8 +18,8 @@ var sampleA = {
 
 // sample function
 var sampleFunction1 = function () {
-  var hoge1 = 1;
-  var huga1 = 2;
+  // var hoge1 = 1;
+  // var huga1 = 2;
 
   var hoge2 = 1;
   var huga2 = 2;
