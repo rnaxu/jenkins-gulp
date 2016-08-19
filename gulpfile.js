@@ -1,32 +1,32 @@
 /**
  * gulp-boiler
- * 
+ *
  * ** 開発開始手順
- * 
+ *
  * $ npm i
  * $ gulp sprite
- * 
- * 
+ *
+ *
  * ** 開発開始 with clean & watchコマンド
- * 
+ *
  * $ gulp start
- * 
+ *
  * ** spriteコマンド
- * 
+ *
  * $ gulp sprite
- * 
+ *
  * ** iamge optimコマンド
- * 
+ *
  * $ gulp optim
- * 
+ *
  * ** jshintコマンド
- * 
+ *
  * $ gulp test
- * 
+ *
  * ** dist、tmp削除コマンド
- * 
+ *
  * $ gulp clean
- * 
+ *
  * ---------------------------------------------------------------------- */
 
 /*
@@ -102,7 +102,7 @@ gulp.task('imageOptim', function() {
 // sass
 var sass = require('gulp-sass');
 gulp.task('sass', function () {
-  gulp.src(path.scss_src + 'common/import.scss')
+  return gulp.src(path.scss_src + 'common/import.scss')
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'expanded'
@@ -116,7 +116,7 @@ gulp.task('sass', function () {
 var autoprefixer = require('gulp-autoprefixer');
 require('es6-promise').polyfill();
 gulp.task('autoprefixer', function () {
-  gulp.src(path.tmp + 'css/common.css')
+  return gulp.src(path.tmp + 'css/common.css')
     .pipe(plumber())
     .pipe(autoprefixer({
       browsers: ['last 2 version'],
@@ -128,7 +128,7 @@ gulp.task('autoprefixer', function () {
 // csscomb
 var csscomb = require('gulp-csscomb');
 gulp.task('csscomb', function () {
-  gulp.src(path.tmp + 'css/common.css')
+  return gulp.src(path.tmp + 'css/common.css')
     .pipe(plumber())
     .pipe(csscomb())
     .pipe(gulp.dest(path.tmp + 'css/'));
@@ -137,7 +137,7 @@ gulp.task('csscomb', function () {
 // csso
 var csso = require('gulp-csso');
 gulp.task('csso', function () {
-  gulp.src(path.tmp + 'css/common.css')
+  return gulp.src(path.tmp + 'css/common.css')
     .pipe(plumber())
     .pipe(csso())
     .pipe(gulp.dest(path.dist + 'css/'))
@@ -282,10 +282,7 @@ gulp.task('build:css', function () {
 
 // build:js
 gulp.task('build:js', function () {
-  gulpSequence('concat', 'uglify', 'test')();
-});
-gulp.task('concat', function () {
-  gulpSequence('concat:lib', 'concat:common')();
+  gulpSequence('concat:lib', 'concat:common', 'uglify', 'test')();
 });
 
 // build:html
@@ -324,7 +321,7 @@ gulp.task('default', function () {
  */
 // start
 gulp.task('start', function () {
-  gulpSequence('clean', 'build', 'watch')();
+  gulpSequence('build', 'watch')();
 });
 
 // local
