@@ -32,17 +32,12 @@ git pull --rebase origin
 
 # WSから dist/ と .git/ 以外を削除
 if test -d ${WORKSPACE} ; then
-#ls -A | grep -v "dist" | grep -v ".git" | xargs rm -rf | rm -rf .gitignore | rm -rf bin
 ls -A | grep -v "dist" | grep -v ".git" | xargs rm -rf
 fi
-
-ls -A
 
 # distディレクトリをroot展開
 cp -r dist/* .
 rm -rf dist
-
-ls -A
 
 if [ -z "$(git status --porcelain)" ]; then
   echo -e "\n*** commitすべき差分が存在しません ***\n\n"
