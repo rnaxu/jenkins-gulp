@@ -42,6 +42,8 @@ ls -A
 cp -r dist/* .
 rm -rf dist
 
+ls -A
+
 if [ -z "$(git status --porcelain)" ]; then
   echo -e "\n*** commitすべき差分が存在しません ***\n\n"
 else
