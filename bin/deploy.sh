@@ -36,7 +36,7 @@ if test -d ${WORKSPACE} ; then
 ls -A | grep -v "dist" | grep -v ".git" | xargs rm -rf
 fi
 
-echo ls -A
+ls -A
 
 # distディレクトリをroot展開
 cp -r dist/* .
